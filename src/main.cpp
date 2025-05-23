@@ -175,13 +175,13 @@ void savePassengers(const std::string& filename, const std::vector<Passenger>& p
  * \brief Точка входа программы.
  */
 int main() {
-    const std::string inputFile = "passengers.csv";
+    const std::string inputFile = "../data/passengers.csv";
     std::vector<int> sizes = {100, 1000, 3000, 5000, 7000, 10000, 20000, 30000, 50000, 70000, 100000};
     auto allPassengers = loadPassengers(inputFile);
     if (allPassengers.empty()) return 1;
 
-    std::ofstream logFile("timings.csv");
-    logFile << "Size,SelectionSort,InsertionSort,QuickSort,StdSort";
+    std::ofstream logFile("../data/timings.csv");
+    logFile << "Size,SelectionSort,InsertionSort,QuickSort,StdSort" << "\n";
 
     for (int size : sizes) {
         std::vector<Passenger> passengers(allPassengers.begin(), allPassengers.begin() + size);
@@ -215,9 +215,9 @@ int main() {
         timing = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
         logFile << timing << "\n";
 
-        savePassengers("sorted/ss_" + std::to_string(size) + ".csv", selSorted);
-        savePassengers("sorted/is_" + std::to_string(size) + ".csv", insSorted);
-        savePassengers("sorted/qs_" + std::to_string(size) + ".csv", qckSorted);
+        savePassengers("../sorted/ss_" + std::to_string(size) + ".csv", selSorted);
+        savePassengers("../sorted/is_" + std::to_string(size) + ".csv", insSorted);
+        savePassengers("../sorted/qs_" + std::to_string(size) + ".csv", qckSorted);
     }
     return 0;
 }
