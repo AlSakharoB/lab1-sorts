@@ -18,7 +18,7 @@ lab1-sorts/
 ├── data/           # Входной CSV и результаты timings.csv
 ├── sorted/         # Отсортированные CSV по каждому алгоритму
 ├── images/         # Графики времени (PNG)
-├── analysis/       # Python-скрипт анализа plot_timings.py
+├── analysis_py/    # Python-скрипт анализа plot_timings.py
 ├── docs/           # Документация Doxygen (index.html)
 └── README.md       # Отчёт и описание проекта
 `````
